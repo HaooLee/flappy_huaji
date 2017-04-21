@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Flappy 滑稽</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            vertical-align: middle;
+        }
+        body,html{
+            height: 100%;
+            /*background-color: #bfa;*/
+        }
+        #start{
+            width: 220px;
+            height: 100px;
+            color: #555;
+            font:bold 22px/50px "微软雅黑";
+            /*border:1px solid ;*/
+            text-align: center;
+            border-radius: 10px ;
+            /*background-color: deepskyblue;*/
+            /*box-shadow: #000000 3px 4px 4px;*/
+            /*text-shadow: #000000 1px 2px 2px;*/
+            margin: 0px auto;
+            position:relative;
+            top:-350px;
+            transition: all .2s linear;
+            opacity: .8;
+            /*transition: visibility 0s;*/
+            background: url("img/start.png") no-repeat;
+            background-size:cover;
+
+        }
+        #start:hover{
+            transition: all .2s linear;
+            /*border-radius: 25px ;*/
+            opacity: 1;
+        }
+        /*#start:active{*/
+            /*opacity: 1;*/
+        /*}*/
+        #stop{
+            width:50px;
+            height:40px;
+            background-color: #00ff00;
+            font: bold 30px "黑体";
+            text-align:center;
+            line-height:40px;
+            /*text-indent: .2em;*/
+            border-radius:30%;
+            margin: 0px auto;
+            position:relative;
+            box-shadow:#888 2px 3px 2px;
+            top: 120px;
+            left:350px;
+            visibility: hidden;
+        }
+        #canvas{
+            display: block;
+            margin: 50px auto;
+            border:2px solid #000000;
+        }
+        #canvasBg{
+            display: block;
+            margin: 50px auto -652px;
+            background: #555;
+
+        }
+        #restart{
+            position: relative;
+            top:-270px;
+            margin: -150px auto ;
+            width: 120px;
+            height:120px;
+            background: url("img/restart.png") no-repeat;
+            background-size: cover;
+            border-radius: 50%;
+            box-shadow: 0px 0px 3px;
+            animation: rotate 5s linear infinite;
+            visibility: hidden;
+        }
+        @keyframes rotate{
+            from{
+                transform: rotate( 0deg );
+            }
+            to{
+                transform: rotate( 360deg );
+            }
+        }
+
+
+    </style>
+    <script type = "text/javascript" src="js/main.js" ></script>
+    <script type = "text/javascript" src="js/bird_class.js" ></script>
+    <script type = "text/javascript" src="js/pillar_class.js" ></script>
+    <script type = "text/javascript" src="js/cloud_class.js" ></script>
+
+</head>
+<body oncontextmenu = self.event.returnValue=false onselectstart = "return false">
+    <div id="stop">‖</div>
+    <!--▶‖-->
+    <canvas id="canvasBg" width=800 height=600></canvas>
+    <canvas id="canvas" width=800 height=600>
+        您的浏览器不支持canvas请更换浏览器
+    </canvas>
+
+
+    <div id="start"></div>
+    <div id= "restart"></div>
+</body>
+
+
+</html>
